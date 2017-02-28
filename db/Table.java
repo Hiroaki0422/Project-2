@@ -82,7 +82,7 @@ public class Table extends HashMap<String, Row> {
         return row;
     }
 
-    public String[] getSharedRow(int rowNum, String[] colNames) {
+    public String[] getRowWithColum(int rowNum, String[] colNames) {
         if (size() == 0 || rowNum > getColum(colums[0]).size()){
             System.out.println("Error, such row does not exist");
             return null;
@@ -130,32 +130,45 @@ public class Table extends HashMap<String, Row> {
                 shared.add(str);
             }
         }
+        ArrayList<String> newcols = new ArrayList<String>(shared);
+        for (String str : t1.colums){
+            if (!shared.contains(str)){
+                newcols.add(str);
+            }
+        }
+        for (String str : t2.colums){
+            if (!shared.contains(str)){
+                newcols.add(str);
+            }
+        }
+        //Assign New Colums Name
+        String newColums[] = new String[newcols.size()];
+        newColums = newcols.toArray(newColums);
+        this.colums = newColums;
+
         //Case 1 : the two tables do not have shared colum
         if (shared.isEmpty()){
-            System.out.println("Let's not worry for now, also you're in wrong field");
+            for (int i = 1; i <= t1.getRowLength(); i++){
+                for (int j = 1; j<= t2.getRowLength(); j++){
+                    String[] newRow = new String[this.getColLength()];
+                    for (int k = 0; k < colums.length; k++){
+                        if (t1.keySet().contains(colums[k])){
+                            newRow[k] = t1.getColum(colums[k]).get(i).toString();
+                        } else {
+                            newRow[k] = t2.getColum(colums[k]).get(j).toString();
+                        }
+                    }
+                    addRow(newRow);
+                }
+            }
         } else {
-            ArrayList<String> newcols = new ArrayList<String>(shared);
-            for (String str : t1.colums){
-                if (!shared.contains(str)){
-                    newcols.add(str);
-                }
-            }
-            for (String str : t2.colums){
-                if (!shared.contains(str)){
-                    newcols.add(str);
-                }
-            }
-            //Assign New Colums Name
-            String newColums[] = new String[newcols.size()];
-            newColums = newcols.toArray(newColums);
-            this.colums = newColums;
             //Converting shared to String[]
             String[] sh = new String[shared.size()];
             sh = shared.toArray(sh);
             //Check which row has same values
             for(int i = 1; i <=t1.getRowLength(); i++){
                 for (int j = 1; j<=t2.getRowLength(); j++){
-                    if(Arrays.equals(t1.getSharedRow(i, sh),(t2.getSharedRow(j,sh)))){
+                    if(Arrays.equals(t1.getRowWithColum(i, sh),(t2.getRowWithColum(j,sh)))){
                         String[] newRow = new String[this.getColLength()];
                         //Inserting new Row with corresponding values from each tables
                         for (int k = 0; k < colums.length; k++){
@@ -188,24 +201,5 @@ public class Table extends HashMap<String, Row> {
             System.out.println(" ");
         }
     }
-    public static void main(String[] args){
-        Table t1 = new Table("t1",new String[]{"X", "Y","Z","W"});
-        t1.addRow(new String[]{"1","7","2","10"});
-        t1.addRow(new String[]{"1","7","4","1"});
-        t1.addRow(new String[]{"1","9","9","1"});
-        t1.get("X").printRow();
-        t1.get("Y").printRow();
-        t1.get("Z").printRow();
-        t1.printTable();
-        System.out.println("");
-        System.out.println(t1.toString());
-        Table t2 = new Table("t1",new String[]{"W", "B", "Z"});
-        t2.addRow(new String[]{"1","7","4"});
-        t2.addRow(new String[]{"7","7","3"});
-        t2.addRow(new String[]{"1","9","6"});
-        t2.addRow(new String[]{"1","11","9"});
-        Table t3 = new Table(t1, t2);
-        System.out.print(t3.toString());
 
-    }
 }
