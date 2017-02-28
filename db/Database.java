@@ -54,7 +54,6 @@ public class Database {
 
     public class Select{
         private final String[] unOperations = new String[]{">",">=","=","<=","<"};
-        private final String[] 
         private Table selectedTable;
         private String[] selectedColums;
         private String filter;

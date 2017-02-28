@@ -123,7 +123,7 @@ public class Table extends HashMap<String, Row> {
         return result;
     }
 
-    public void join(Table t1, Table t2){
+    private void join(Table t1, Table t2){
         ArrayList<String> shared = new ArrayList<String>();
         for (String str : t1.getColums()) {
             if (t2.containsKey(str)){
