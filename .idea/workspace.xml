@@ -2,21 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b8243ab-552c-4433-ab7a-830cec5498ae" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/Binary.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/BinaryTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/Unary.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/UnaryTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Project-2/db/Database$Select.class" afterPath="$PROJECT_DIR$/out/production/Project-2/db/Database$Select.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Project-2/db/Database.class" afterPath="$PROJECT_DIR$/out/production/Project-2/db/Database.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Project-2/db/DatabaseTest.class" afterPath="$PROJECT_DIR$/out/production/Project-2/db/DatabaseTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Project-2/db/Row.class" afterPath="$PROJECT_DIR$/out/production/Project-2/db/Row.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Project-2/db/Table.class" afterPath="$PROJECT_DIR$/out/production/Project-2/db/Table.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/Database.java" afterPath="$PROJECT_DIR$/db/Database.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/DatabaseTest.java" afterPath="$PROJECT_DIR$/db/DatabaseTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/Row.java" afterPath="$PROJECT_DIR$/db/Row.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/Table.java" afterPath="$PROJECT_DIR$/db/Table.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Project-2/.idea/workspace.xml" afterPath="$PROJECT_DIR$/out/production/Project-2/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -136,8 +123,8 @@
       <file leaf-file-name="Table.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db/Table.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="224" column="13" lean-forward="true" selection-start-line="224" selection-start-column="13" selection-end-line="224" selection-end-column="13" />
+            <state relative-caret-position="168">
+              <caret line="84" column="60" lean-forward="false" selection-start-line="84" selection-start-column="60" selection-end-line="84" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -598,10 +585,18 @@
       <option name="presentableId" value="Default" />
       <updated>1488255807295</updated>
     </task>
+    <task id="LOCAL-00001" summary="The addRow fixed&#10;Row is no longer generic (to handle special value)&#10;Select class created&#10;">
+      <created>1488409850342</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1488409850342</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="828" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="828" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -638,6 +633,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="The addRow fixed&#10;Row is no longer generic (to handle special value)&#10;Select class created&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="The addRow fixed&#10;Row is no longer generic (to handle special value)&#10;Select class created&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1134,8 +1133,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/db/Table.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="224" column="13" lean-forward="true" selection-start-line="224" selection-start-column="13" selection-end-line="224" selection-end-column="13" />
+        <state relative-caret-position="168">
+          <caret line="84" column="60" lean-forward="false" selection-start-line="84" selection-start-column="60" selection-end-line="84" selection-end-column="60" />
           <folding />
         </state>
       </provider>

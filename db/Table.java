@@ -81,7 +81,9 @@ public class Table extends HashMap<String, Row> {
 
         //Otherwise
         for (int i = 0; i < colums.length; i++) {
-            if(this.dataTypes[i] != check.typeCheck(newRow[i]));
+            if(this.dataTypes[i] != check.typeCheck(newRow[i])){
+                System.out.println("the types do not match");
+            }
             get(colums[i]).add(newRow[i]);
         }
 
