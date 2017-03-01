@@ -8,14 +8,32 @@ import java.util.*;
 public class Table extends HashMap<String, Row> {
     private String tableName;
     private String[] colums;
+    private String[] dataTypes;
 
     public Table () {
         this.tableName = null;
     }
 
+    public Table(String[] colums){
+        this.colums = colums;
+        this.dataTypes = new String[colums.length];
+    }
+
+    public Table(String[] colums, String[] dataTypes){
+        this.colums = colums;
+        this.dataTypes = dataTypes;
+    }
+
+    public Table(Table tb){
+        this.tableName = tb.tableName;
+        this.colums = tb.colums;
+        this.entrySet().addAll(tb.entrySet());
+    }
+
     public Table(String tableName, String[] colums) {
         this.tableName = tableName;
         this.colums = colums;
+        this.dataTypes = new String[colums.length];
     }
 
     public Table(Table tb1, Table tb2){
@@ -40,18 +58,21 @@ public class Table extends HashMap<String, Row> {
         }
 
         //Inserting First Row while checking the variable type
+        TypeChecker check = new TypeChecker();
         if(size() == 0){
-            TypeChecker check = new TypeChecker();
             for (int i = 0; i < colums.length; i++) {
                 String type = check.typeCheck(newRow[i]);
                 if (type.equals("Integer")){
-                    put(colums[i], new Row<Integer>(colums[i],"integer"));
+                    put(colums[i], new Row(colums[i],"integer"));
+                    this.dataTypes[i] = "integer";
                     get(colums[i]).add(newRow[i]);
                 } else if (type.equals("Float")){
-                    put(colums[i], new Row<Float>(colums[i], "float"));
+                    put(colums[i], new Row(colums[i], "float"));
+                    this.dataTypes[i] = "float";
                     get(colums[i]).add(newRow[i]);
                 } else {
-                    put(colums[i], new Row<String>(colums[i], "string"));
+                    put(colums[i], new Row(colums[i], "string"));
+                    this.dataTypes[i] = "string";
                     get(colums[i]).add(newRow[i]);
                 }
             }
@@ -60,6 +81,7 @@ public class Table extends HashMap<String, Row> {
 
         //Otherwise
         for (int i = 0; i < colums.length; i++) {
+            if(this.dataTypes[i] != check.typeCheck(newRow[i]));
             get(colums[i]).add(newRow[i]);
         }
 
@@ -95,18 +117,20 @@ public class Table extends HashMap<String, Row> {
     }
 
     public String[] getColums() {
-        return colums;
+        return this.colums;
     }
 
+    public String[] getDataTypes() {return this.dataTypes; }
+
     public String toString() {
-        if (size() == 0){
-            return" ";
-        }
         StringJoiner sj = new StringJoiner(",");
-        for (String clm : colums) {
-            sj.add(clm+" "+get(clm).getDataType());
+        for (int i = 0; i < getColLength(); i++) {
+            sj.add(this.colums[i]+" "+this.dataTypes[i]);
         }
         String result = sj.toString();
+        if (size() == 0){
+            return result;
+        }
         result = result + "\n";
         for (int i = 1; i <= get(colums[0]).size(); i++ ){
             sj = new StringJoiner(",");
@@ -145,6 +169,7 @@ public class Table extends HashMap<String, Row> {
         String newColums[] = new String[newcols.size()];
         newColums = newcols.toArray(newColums);
         this.colums = newColums;
+        this.dataTypes = new String[this.colums.length];
 
         //Case 1 : the two tables do not have shared colum
         if (shared.isEmpty()){

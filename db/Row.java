@@ -1,5 +1,6 @@
 package db;
 
+import java.sql.Struct;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -8,7 +9,7 @@ import java.util.Set;
 /**
  * Created by tetsuji07 on 2/25/17.
  */
-public class Row<T> extends HashMap<Integer, T> {
+public class Row extends HashMap<Integer, String> {
     private String rawName;
     private String dataType;
 
@@ -43,7 +44,7 @@ public class Row<T> extends HashMap<Integer, T> {
         return this.dataType;
     }
 
-    public void add(T value){
+    public void add(String value){
         put(size()+1, value);
     }
 
