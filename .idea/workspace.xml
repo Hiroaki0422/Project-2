@@ -3,13 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="9b8243ab-552c-4433-ab7a-830cec5498ae" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Project-2/db/Database$Select.class" afterPath="$PROJECT_DIR$/out/production/Project-2/db/Database$Select.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Project-2/db/Table.class" afterPath="$PROJECT_DIR$/out/production/Project-2/db/Table.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Project-2/db/TypeChecker.class" afterPath="$PROJECT_DIR$/out/production/Project-2/db/TypeChecker.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Project-2/db/Database.class" afterPath="$PROJECT_DIR$/out/production/Project-2/db/Database.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Project-2/db/DatabaseTest.class" afterPath="$PROJECT_DIR$/out/production/Project-2/db/DatabaseTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/Database.java" afterPath="$PROJECT_DIR$/db/Database.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/DatabaseTest.java" afterPath="$PROJECT_DIR$/db/DatabaseTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/Table.java" afterPath="$PROJECT_DIR$/db/Table.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/TypeChecker.java" afterPath="$PROJECT_DIR$/db/TypeChecker.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,8 +31,8 @@
       <file leaf-file-name="DatabaseTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db/DatabaseTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="37" column="31" lean-forward="false" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
+            <state relative-caret-position="172">
+              <caret line="34" column="58" lean-forward="false" selection-start-line="34" selection-start-column="58" selection-end-line="34" selection-end-column="58" />
               <folding />
             </state>
           </provider>
@@ -53,12 +51,14 @@
       <file leaf-file-name="Database.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db/Database.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="129" column="0" lean-forward="false" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
+            <state relative-caret-position="990">
+              <caret line="70" column="32" lean-forward="false" selection-start-line="70" selection-start-column="32" selection-end-line="70" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#5839#5840#0" expanded="true" />
-                <element signature="e#5891#5892#0" expanded="true" />
+                <element signature="e#5823#5824#0" expanded="true" />
+                <element signature="e#5875#5876#0" expanded="true" />
+                <element signature="e#5910#5911#0" expanded="true" />
+                <element signature="e#5959#5960#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -615,7 +615,14 @@
       <option name="project" value="LOCAL" />
       <updated>1488410017998</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="input fixed">
+      <created>1488414672853</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1488414672853</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -659,7 +666,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="The addRow fixed&#10;Row is no longer generic (to handle special value)&#10;Select class created&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="The addRow fixed&#10;Row is no longer generic (to handle special value)&#10;Select class created&#10;" />
+    <MESSAGE value="input fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="input fixed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -720,8 +728,10 @@
           <caret line="55" column="82" lean-forward="false" selection-start-line="55" selection-start-column="82" selection-end-line="55" selection-end-column="82" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5839#5840#0" expanded="true" />
-            <element signature="e#5891#5892#0" expanded="true" />
+            <element signature="e#5823#5824#0" expanded="true" />
+            <element signature="e#5875#5876#0" expanded="true" />
+            <element signature="e#5910#5911#0" expanded="true" />
+            <element signature="e#5959#5960#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -810,8 +820,10 @@
           <caret line="57" column="30" lean-forward="false" selection-start-line="57" selection-start-column="30" selection-end-line="57" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5839#5840#0" expanded="true" />
-            <element signature="e#5891#5892#0" expanded="true" />
+            <element signature="e#5823#5824#0" expanded="true" />
+            <element signature="e#5875#5876#0" expanded="true" />
+            <element signature="e#5910#5911#0" expanded="true" />
+            <element signature="e#5959#5960#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1151,20 +1163,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/db/Database.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="129" column="0" lean-forward="false" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
+        <state relative-caret-position="990">
+          <caret line="70" column="32" lean-forward="false" selection-start-line="70" selection-start-column="32" selection-end-line="70" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5839#5840#0" expanded="true" />
-            <element signature="e#5891#5892#0" expanded="true" />
+            <element signature="e#5823#5824#0" expanded="true" />
+            <element signature="e#5875#5876#0" expanded="true" />
+            <element signature="e#5910#5911#0" expanded="true" />
+            <element signature="e#5959#5960#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/DatabaseTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="37" column="31" lean-forward="false" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
+        <state relative-caret-position="172">
+          <caret line="34" column="58" lean-forward="false" selection-start-line="34" selection-start-column="58" selection-end-line="34" selection-end-column="58" />
           <folding />
         </state>
       </provider>

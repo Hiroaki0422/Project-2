@@ -66,8 +66,9 @@ public class Database {
         }
     }
 
-    public void select (String expr, String tbs, String filters) throws Exception {
+    public String select (String expr, String tbs, String filters) throws Exception {
         Select select = new Select(expr, tbs, filters);
+        return select.toString();
     }
 
     public class Select{
@@ -85,7 +86,6 @@ public class Database {
             from(tbs);
             select(expr);
             where(filters);
-            System.out.println(this.tb.toString());
         }
 
         private void from(String tbs){
@@ -167,6 +167,10 @@ public class Database {
 
         public void storeTable(String tableName) {
             addTable(tableName, this.tb);
+        }
+
+        public String toString(){
+            return this.tb.toString();
         }
 
     }
