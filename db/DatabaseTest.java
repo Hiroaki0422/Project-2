@@ -33,9 +33,9 @@ public class DatabaseTest {
         db.loadTable("t4");
         System.out.println(db.getTable("t4").toString());
         //db.select("*","t2,t1,t4",null);
-        db.select("x int,z int", "t2,t1,t4",null);
+        //db.select("x,z", "t2,t1,t4",null);
         //db.select("x int+z int as T,x int-z int as Y", "t2,t1,t4",null);
-        db.select("x int+z int as T,x int-z int as Y", "t2,t1,t4","T>9,Y<0");
+        db.select("x+z as T,x-z as Y", "t2,t1,t4","T>9,Y<0");
     }
 
     public static void main(String[] args) throws Exception {

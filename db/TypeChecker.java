@@ -12,11 +12,11 @@ public class TypeChecker {
             System.out.println("Error null Argument Class: TypeChecker -> typeCheck");
             return "";
         } else if (isInteger(input)){
-            return "Integer";
+            return "int";
         } else if (isFloat(input)) {
-            return "Float";
+            return "float";
         } else {
-            return "String";
+            return "string";
         }
     }
 

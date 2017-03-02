@@ -62,11 +62,11 @@ public class Table extends HashMap<String, Row> {
         if(size() == 0){
             for (int i = 0; i < colums.length; i++) {
                 String type = check.typeCheck(newRow[i]);
-                if (type.equals("Integer")){
-                    put(colums[i], new Row(colums[i],"integer"));
-                    this.dataTypes[i] = "integer";
+                if (type.equals("int")){
+                    put(colums[i], new Row(colums[i],"int"));
+                    this.dataTypes[i] = "int";
                     get(colums[i]).add(newRow[i]);
-                } else if (type.equals("Float")){
+                } else if (type.equals("float")){
                     put(colums[i], new Row(colums[i], "float"));
                     this.dataTypes[i] = "float";
                     get(colums[i]).add(newRow[i]);
@@ -81,8 +81,9 @@ public class Table extends HashMap<String, Row> {
 
         //Otherwise
         for (int i = 0; i < colums.length; i++) {
-            if(this.dataTypes[i] != check.typeCheck(newRow[i])){
-                System.out.println("the types do not match");
+            if (!this.dataTypes[i].equals(check.typeCheck(newRow[i]))){
+                System.out.println("Type do not match");
+                return;
             }
             get(colums[i]).add(newRow[i]);
         }

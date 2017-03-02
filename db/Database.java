@@ -46,7 +46,14 @@ public class Database {
             In in = new In(name + ".tbl");
             String line = in.readLine();
             String[] newLine = line.split(",");
-            Table newtb = new Table(name, newLine);
+            String[] newCols = new String[newLine.length];
+            String[] dataTypes = new String[newLine.length];
+            for (int i = 0; i < newLine.length; i++){
+                String[] pair = newLine[i].split("\\s+");
+                newCols[i] = pair[0];
+                dataTypes[i] = pair[1];
+            }
+            Table newtb = new Table(newCols,dataTypes);
             while (in.hasNextLine()) {
                 line = in.readLine();
                 newLine = line.split(",");
