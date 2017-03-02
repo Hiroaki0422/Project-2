@@ -10,7 +10,7 @@ public class Binary {
     private String operation;
     private boolean doOperation = false;
     private static final String NaN = "NaN";
-    String type;
+    private String type;
 
     Binary(){
         this.doOperation = false;
@@ -69,7 +69,7 @@ public class Binary {
 
     }
 
-    private String evaluateReturnType(String a, String b) throws Exception {
+    public String evaluateReturnType(String a, String b) throws Exception {
         if (a.equals("String") && b.equals("String")) {
             return "string";
 
@@ -81,7 +81,7 @@ public class Binary {
             return "float";
 
         } else {
-            return "integer";
+            return "int";
 
         }
     }

@@ -106,15 +106,21 @@ public class Database {
             //Split the expression by the number of arguments
             String[] exprs = expr.split(",");
             String[] selectedCols = new String[exprs.length];
+            this.selectedDataTypes = new String[exprs.length];
 
             for (int i = 0; i < exprs.length; i++){
                 if (exprs[i].contains("as")){ //Check if they have mathematical operations
                     String[] pair = exprs[i].split(" as ");
-                    this.biconds.add(new Binary(pair[0]));
+                    Binary bi = new Binary(pair[0]);
+                    this.biconds.add(bi);
                     selectedCols[i] = pair[1];
+                    String left = this.tb.getColum(bi.getLeft()).getDataType();
+                    String right = this.tb.getColum(bi.getRight()).getDataType();
+                    this.selectedDataTypes[i] = bi.evaluateReturnType(left, right);
                 } else {
                     this.biconds.add(new Binary());
                     selectedCols[i] = exprs[i];
+                    this.selectedDataTypes[i] = this.tb.getColum(selectedCols[i]).getDataType();
                 }
             }
             this.selectedColums = selectedCols;
@@ -122,7 +128,7 @@ public class Database {
         }
 
         private void applyBinary() throws Exception {
-            Table nTb = new Table(this.selectedColums);
+            Table nTb = new Table(this.selectedColums,this.selectedDataTypes);
             for (int i = 1; i <= this.tb.getRowLength(); i++){
                 String[] newRow = new String[this.selectedColums.length];
                 for (int j = 0; j < this.selectedColums.length; j++){

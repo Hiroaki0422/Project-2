@@ -57,8 +57,15 @@ public class Table extends HashMap<String, Row> {
             return;
         }
 
-        //Inserting First Row while checking the variable type
         TypeChecker check = new TypeChecker();
+        for (int i = 0; i < colums.length; i++) {
+            if (!this.dataTypes[i].equals(check.typeCheck(newRow[i]))){
+                System.out.println("Type do not match");
+                return;
+            }
+        }
+
+        //Inserting First Row while checking the variable type
         if(size() == 0){
             for (int i = 0; i < colums.length; i++) {
                 String type = check.typeCheck(newRow[i]);
@@ -84,8 +91,11 @@ public class Table extends HashMap<String, Row> {
             if (!this.dataTypes[i].equals(check.typeCheck(newRow[i]))){
                 System.out.println("Type do not match");
                 return;
+            } else if (newRow[i].trim().length() == 0) {
+                get(colums[i]).add("NoValue");
+            } else {
+                get(colums[i]).add(newRow[i]);
             }
-            get(colums[i]).add(newRow[i]);
         }
 
         return;
@@ -173,6 +183,13 @@ public class Table extends HashMap<String, Row> {
         newColums = newcols.toArray(newColums);
         this.colums = newColums;
         this.dataTypes = new String[this.colums.length];
+        for (int k = 0; k < colums.length; k++){
+            if (t1.keySet().contains(colums[k])){
+                dataTypes[k] = t1.getColum(colums[k]).getDataType();
+            } else {
+                dataTypes[k] = t2.getColum(colums[k]).getDataType();
+            }
+        }
 
         //Case 1 : the two tables do not have shared colum
         if (shared.isEmpty()){
